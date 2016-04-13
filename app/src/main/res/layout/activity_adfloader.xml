@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.ursaminoralpha.littlerobot.MainActivity">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context="com.ursaminoralpha.littlerobot.MainActivity"
+        tools:showIn="@layout/activity_main">
+
+        <TextView
+            android:id="@+id/translation_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/rotation_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/translation_textview"/>
+        <TextView
+            android:id="@+id/dirTo_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rotation_textview"/>
+        <TextView
+            android:id="@+id/status_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dirTo_textview" />
+
+        <ScrollView
+            android:id="@+id/demoScroller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/status_textview"
+            android:clickable="false">
+
+            <TextView
+                android:id="@+id/consoleText"
+                android:textIsSelectable="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:typeface="monospace"
+                android:clickable="false"/>
+        </ScrollView>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Forward"
+            android:id="@+id/buttonForward"
+            android:layout_above="@+id/buttonStop"
+            android:layout_alignStart="@+id/buttonReverse"
+            android:layout_marginBottom="44dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Left  "
+            android:id="@+id/buttonLeft"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/buttonStop"
+            android:layout_marginEnd="57dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Reverse"
+            android:id="@+id/buttonReverse"
+            android:layout_marginTop="44dp"
+            android:layout_below="@+id/buttonStop"
+            android:layout_centerHorizontal="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Right"
+            android:id="@+id/buttonRight"
+            android:layout_alignTop="@+id/buttonStop"
+            android:layout_toEndOf="@+id/buttonForward"
+            android:layout_marginStart="69dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   Stop    "
+            android:id="@+id/buttonStop"
+            android:layout_alignTop="@+id/buttonLeft"
+            android:layout_alignEnd="@+id/buttonForward" />
+
+        <Button
+            android:id="@+id/buttonSetTarget"
+            android:text="Set Target"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_below="@+id/dirTo_textview"
+            android:layout_alignRight="@+id/demoScroller"
+            android:layout_alignEnd="@+id/demoScroller" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Connection"
+            android:id="@+id/statusText"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@+id/automatedButton" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="ADF not Loaded"
+            android:id="@+id/adfStatus"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Go to ADF Target"
+            android:id="@+id/automatedButton"
+            android:layout_above="@+id/dirTo_textview"
+            android:layout_alignRight="@+id/buttonSetTarget"
+            android:layout_alignEnd="@+id/buttonSetTarget" />
+
+        <Button
+            android:id="@+id/manualButton"
+            android:text="Go Manual"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_above="@+id/adfStatus"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:soundEffectsEnabled="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Manually Controlled"
+            android:id="@+id/controlText"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Tango Quaternian Data"
+            android:id="@+id/quats"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/translation_textview"
+            android:layout_toEndOf="@+id/translation_textview" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Target Quaternian Data"
+            android:id="@+id/targetQuat"
+            android:layout_below="@+id/rotation_textview"
+            android:layout_toRightOf="@+id/rotation_textview"
+            android:layout_toEndOf="@+id/rotation_textview" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:id="@+id/values"
+            android:layout_alignBottom="@+id/buttonForward"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Remote Control"
+            android:id="@+id/remoteControlButton"
+            android:layout_alignTop="@+id/buttonReverse"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+    </RelativeLayout>
+
+</android.support.design.widget.CoordinatorLayout>
