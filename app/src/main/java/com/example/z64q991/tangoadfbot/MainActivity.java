@@ -197,6 +197,7 @@ public class MainActivity extends AppCompatActivity {
                 automated = false;
                 controlType.setText("Manually Controlled");
                 // instead of calling onResume make this its own activity that starts running on the button click
+                // create intent then do start activity
                 onResume();
             }
         });
