@@ -1,5 +1,6 @@
 package com.example.z64q991.tangoadfbot;
 
+import android.content.Intent;
 import android.hardware.usb.UsbDeviceConnection;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -198,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                 controlType.setText("Manually Controlled");
                 // instead of calling onResume make this its own activity that starts running on the button click
                 // create intent then do start activity
-                onResume();
+                runActivity();
             }
         });
 
@@ -224,6 +225,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+    // maybe take in button id and switch based on that
+    public void runActivity(){
+        Intent intent = new Intent(this, ManualControlActivity.class);
+        this.startActivity(intent);
     }
 
     @Override
