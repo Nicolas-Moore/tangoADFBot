@@ -20,10 +20,27 @@
             <intent-filter>
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
             </intent-filter>
+
             <meta-data
                 android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
                 android:resource="@xml/device_filter" />
         </activity>
+        <activity
+            android:name=".ManualControlActivity"
+            android:label="@string/title_activity_manual_control"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AutomatedActivity"
+            android:label="@string/title_activity_automated"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RemoteActivity"
+            android:label="@string/title_activity_remote"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ADFRecorder"
+            android:label="@string/title_activity_adfrecorder"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
