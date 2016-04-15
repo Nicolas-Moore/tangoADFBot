@@ -58,6 +58,7 @@ public class AutomatedActivity extends AppCompatActivity {
     private TextView statusText;
     private Button goButton;
     private Button stopButton;
+    private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +70,7 @@ public class AutomatedActivity extends AppCompatActivity {
         statusText = (TextView) findViewById(R.id.statusText);
         goButton = (Button) findViewById(R.id.goButton);
         stopButton = (Button) findViewById(R.id.stopButton);
+        backButton = (Button) findViewById(R.id.backButton);
         quats = (TextView) findViewById(R.id.quats);
         mTango = new Tango(this);
         localized = false;
@@ -88,6 +90,12 @@ public class AutomatedActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 adfDirection();
+            }
+        });
+        backButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                goBack();
             }
         });
 
@@ -144,7 +152,7 @@ public class AutomatedActivity extends AppCompatActivity {
             for(int i = 0; i<8;i++) {
                 message[i] = (byte) mes;
             }
-            port.write(message,1000);
+            port.write(message, 1000);
         } catch (IOException e) {
             // Deal with error.
         } finally {
@@ -327,5 +335,9 @@ public class AutomatedActivity extends AppCompatActivity {
         else{
             getPermissions();
         }
+    }
+
+    public void goBack(){
+        super.onBackPressed();
     }
 }
